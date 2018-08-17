@@ -11830,6 +11830,8 @@ $( document ).ready(function(){
 <p><a href="https://www.cs.cmu.edu/~enron/">Enron Email Corpus</a></p>
 <p>Ref /3</p>
 <p><a href="http://scikit-learn.org/stable/index.html">Sklearn Documentation</a></p>
+<p>Ref /4</p>
+<p><a href="http://busigence.com/blog/hyperparameter-optimization-and-why-is-it-important">Hyperparameter Optimization</a></p>
 
 </div>
 </div>
@@ -11867,6 +11869,15 @@ $( document ).ready(function(){
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Statistics">Statistics<a class="anchor-link" href="#Statistics">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The data set contains data for 146 persons, of which 18 are persons of interest as shown in chapter 4.2 and 128 are not. The total number of features used is 19, of which there are a several with hardly any entries at all. These will not be used for analysis as shown in chapter 4.2 as well.</p>
+
 </div>
 </div>
 </div>
@@ -12212,7 +12223,7 @@ $( document ).ready(function(){
 
 
 <div class="output_png output_subarea ">
-<img src="output_11_0.png"
+<img src="output_12_0.png"
 >
 </div>
 
@@ -12797,7 +12808,8 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Algorithms-Selection-and-Evaluation">Algorithms Selection and Evaluation<a class="anchor-link" href="#Algorithms-Selection-and-Evaluation">&#182;</a></h1><p>All classifiers are tuned using the feature scores found during feature selection with SelectKBest. Features are added starting with the highest scores. Every time the classifier is run on the data, accuracy, precision, recall and F1-score are determined using an adapted my_tester.py based on the provided tester.py. Execution times were recorded in order to assess performance.</p>
+<h1 id="Algorithms-Selection-and-Evaluation">Algorithms Selection and Evaluation<a class="anchor-link" href="#Algorithms-Selection-and-Evaluation">&#182;</a></h1><p>Selection and tuning of algorithms are an important part of machine learning. As the tuning can take a long time, it is important to know the strengths and weaknesses of each type of algorithm to start off with the most promising ones. Hyperparameters are parameters, that are predefined and can't be learnt by the model. Examples are learning rate, penalty and C for logistic regression and number of estimators, min samples split, etc. in Random Forest and Decision Trees (see Ref /4). Tuning of these hyperparameters leads to a better statistical learning model (Ref /4). Please see also the specific chapters on how the parameters were tuned for this project.</p>
+<p>All classifiers are tuned using the feature scores found during feature selection with SelectKBest. Features are added starting with the highest scores. Every time the classifier is run on the data, accuracy, precision, recall and F1-score are determined using an adapted my_tester.py based on the provided tester.py. Execution times were recorded in order to assess performance.</p>
 <p>Evaluating the scores as described above is useful in order to determine the most useful classifier and parameter setting for the task at hand. If we wanted to find as many POIs as possible we would emphasize <strong>recall</strong>. If we wanted to make sure, that nobody gets falsely accused of being involved in the fraud, we would emphasize <strong>precision</strong>. Maximising the <strong>F1-score</strong> would give us a good balance of both these objectives.</p>
 <p>One of the most common mistakes in machine learning is overfitting. One result of overfitting may be that a classifier works really well on known data, but has poor performance on unseen data. One way to overcome this problem is the use of cross validation. The provided tester.py uses an sklearn package called StratifiedShuffleSplit, which randomly creates splits of training and testing data and reports average scores for all of these splits.</p>
 <h2 id="Definition-of-Scores">Definition of Scores<a class="anchor-link" href="#Definition-of-Scores">&#182;</a></h2><p><strong>total_predictions</strong> = true_negatives + false_negatives + false_positives + true_positives</p>
@@ -13024,7 +13036,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>execution time: 13.365 s
+<pre>execution time: 16.839 s
 </pre>
 </div>
 </div>
@@ -13202,114 +13214,114 @@ $( document ).ready(function(){
     <tr>
       <td>2</td>
       <td>13000</td>
-      <td>0.768538</td>
-      <td>0.218628</td>
-      <td>0.1960</td>
-      <td>0.206697</td>
+      <td>0.768923</td>
+      <td>0.218925</td>
+      <td>0.1955</td>
+      <td>0.206550</td>
     </tr>
     <tr>
       <td>3</td>
       <td>13000</td>
-      <td>0.800385</td>
-      <td>0.361046</td>
-      <td>0.3865</td>
-      <td>0.373340</td>
+      <td>0.800923</td>
+      <td>0.360927</td>
+      <td>0.3815</td>
+      <td>0.370929</td>
     </tr>
     <tr>
       <td>4</td>
       <td>13000</td>
-      <td>0.791308</td>
-      <td>0.327695</td>
-      <td>0.3390</td>
-      <td>0.333251</td>
+      <td>0.789769</td>
+      <td>0.322346</td>
+      <td>0.3325</td>
+      <td>0.327344</td>
     </tr>
     <tr>
       <td>5</td>
       <td>13000</td>
-      <td>0.782385</td>
-      <td>0.300625</td>
+      <td>0.782154</td>
+      <td>0.300192</td>
       <td>0.3125</td>
-      <td>0.306448</td>
+      <td>0.306222</td>
     </tr>
     <tr>
       <td>6</td>
       <td>14000</td>
-      <td>0.779786</td>
-      <td>0.251947</td>
+      <td>0.780786</td>
+      <td>0.253573</td>
       <td>0.2750</td>
-      <td>0.262969</td>
+      <td>0.263852</td>
     </tr>
     <tr>
       <td>7</td>
       <td>15000</td>
-      <td>0.801600</td>
-      <td>0.263337</td>
-      <td>0.2715</td>
-      <td>0.267356</td>
+      <td>0.797467</td>
+      <td>0.245588</td>
+      <td>0.2505</td>
+      <td>0.248020</td>
     </tr>
     <tr>
       <td>8</td>
       <td>15000</td>
-      <td>0.805667</td>
-      <td>0.278020</td>
-      <td>0.2865</td>
-      <td>0.282197</td>
+      <td>0.811467</td>
+      <td>0.293825</td>
+      <td>0.2950</td>
+      <td>0.294411</td>
     </tr>
     <tr>
       <td>9</td>
       <td>15000</td>
-      <td>0.810333</td>
-      <td>0.290945</td>
-      <td>0.2940</td>
-      <td>0.292465</td>
+      <td>0.808667</td>
+      <td>0.284653</td>
+      <td>0.2875</td>
+      <td>0.286070</td>
     </tr>
     <tr>
       <td>10</td>
       <td>15000</td>
-      <td>0.808800</td>
-      <td>0.284080</td>
-      <td>0.2855</td>
-      <td>0.284788</td>
+      <td>0.810067</td>
+      <td>0.293028</td>
+      <td>0.3005</td>
+      <td>0.296717</td>
     </tr>
     <tr>
       <td>11</td>
       <td>15000</td>
-      <td>0.801867</td>
-      <td>0.250000</td>
-      <td>0.2430</td>
-      <td>0.246450</td>
+      <td>0.799733</td>
+      <td>0.244659</td>
+      <td>0.2405</td>
+      <td>0.242562</td>
     </tr>
     <tr>
       <td>12</td>
       <td>15000</td>
-      <td>0.797267</td>
-      <td>0.220312</td>
-      <td>0.2050</td>
-      <td>0.212380</td>
+      <td>0.797200</td>
+      <td>0.218378</td>
+      <td>0.2020</td>
+      <td>0.209870</td>
     </tr>
     <tr>
       <td>13</td>
       <td>15000</td>
-      <td>0.793733</td>
-      <td>0.206230</td>
-      <td>0.1920</td>
-      <td>0.198861</td>
+      <td>0.794667</td>
+      <td>0.209052</td>
+      <td>0.1940</td>
+      <td>0.201245</td>
     </tr>
     <tr>
       <td>14</td>
       <td>15000</td>
-      <td>0.791800</td>
-      <td>0.204629</td>
-      <td>0.1945</td>
-      <td>0.199436</td>
+      <td>0.792667</td>
+      <td>0.209728</td>
+      <td>0.2005</td>
+      <td>0.205010</td>
     </tr>
     <tr>
       <td>15</td>
       <td>15000</td>
-      <td>0.794667</td>
-      <td>0.204595</td>
-      <td>0.1870</td>
-      <td>0.195402</td>
+      <td>0.795600</td>
+      <td>0.212513</td>
+      <td>0.1970</td>
+      <td>0.204463</td>
     </tr>
   </tbody>
 </table>
@@ -13323,7 +13335,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>execution time: 14.009 s
+<pre>execution time: 17.996 s
 </pre>
 </div>
 </div>
@@ -13544,7 +13556,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>execution time: 16.546 s
+<pre>execution time: 23.404 s
 </pre>
 </div>
 </div>
@@ -13566,7 +13578,7 @@ $( document ).ready(function(){
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="K-Nearest-Neighbors">K-Nearest Neighbors<a class="anchor-link" href="#K-Nearest-Neighbors">&#182;</a></h2><p>The number of nearest beighbors was tuned by hand. The best result was found, when using n_neighbors=3. At higher numbers, no true positives could be computed. Lower numbers resulted in poor scores.</p>
+<h2 id="K-Nearest-Neighbors">K-Nearest Neighbors<a class="anchor-link" href="#K-Nearest-Neighbors">&#182;</a></h2><p>The number of nearest neighbors was tuned by hand as described below. The best result was found, when using n_neighbors = 3.</p>
 <p>The classifier is run on the rescaled data set, because it is of the type that relies on similarities. Rescaling is needed in order to prevent the results being biased.</p>
 
 </div>
@@ -13764,7 +13776,7 @@ $( document ).ready(function(){
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>execution time: 16.11 s
+<pre>execution time: 22.925 s
 </pre>
 </div>
 </div>
@@ -13780,6 +13792,149 @@ $( document ).ready(function(){
 <p>The best F1-score at approximately 0.40 is found, when using the top 3 features. Accuracy, precision and recall are really good, when compared to the other classifiers tested.</p>
 <p>Precision and recall are both above 0.3 as required.</p>
 <p>The execution time is acceptable, if notably slower than for the Naive Bayes classifier.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tuning-of-n_neighbors">Tuning of n_neighbors<a class="anchor-link" href="#Tuning-of-n_neighbors">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">my_tools</span><span class="o">.</span><span class="n">tune_k_nn</span><span class="p">(</span><span class="n">data_dict</span><span class="p">,</span> <span class="n">features_list</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+           metric_params=None, n_jobs=1, n_neighbors=2, p=2,
+           weights=&#39;uniform&#39;)
+	Accuracy: 0.86931	Precision: 0.77615	Recall: 0.21150	F1: 0.33242	F2: 0.24751
+	Total predictions: 13000	True positives:  423	False positives:  122	False negatives: 1577	True negatives: 10878
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For n_neighbors = 2, recall is at 0.21 and therefore does not fulfil the project requirement.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">my_tools</span><span class="o">.</span><span class="n">tune_k_nn</span><span class="p">(</span><span class="n">data_dict</span><span class="p">,</span> <span class="n">features_list</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+           metric_params=None, n_jobs=1, n_neighbors=3, p=2,
+           weights=&#39;uniform&#39;)
+	Accuracy: 0.86177	Precision: 0.60181	Recall: 0.30000	F1: 0.40040	F2: 0.33344
+	Total predictions: 13000	True positives:  600	False positives:  397	False negatives: 1400	True negatives: 10603
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For n_neighbors = 3, the project requirement for recall is only just fulfilled.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">my_tools</span><span class="o">.</span><span class="n">tune_k_nn</span><span class="p">(</span><span class="n">data_dict</span><span class="p">,</span> <span class="n">features_list</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>KNeighborsClassifier(algorithm=&#39;auto&#39;, leaf_size=30, metric=&#39;minkowski&#39;,
+           metric_params=None, n_jobs=1, n_neighbors=4, p=2,
+           weights=&#39;uniform&#39;)
+	Accuracy: 0.86892	Precision: 0.79960	Recall: 0.19750	F1: 0.31676	F2: 0.23252
+	Total predictions: 13000	True positives:  395	False positives:   99	False negatives: 1605	True negatives: 10901
+
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For n_neighbors &gt; 3, the project requirement for recall is not fulfilled. Also the F1-score tends to decrease with higher numbers.</p>
 
 </div>
 </div>

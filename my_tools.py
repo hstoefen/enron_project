@@ -139,3 +139,21 @@ def tune_k(data_dict, features_list, clf):
     scores = pd.DataFrame(columns=columns, data=scores)
     
     return scores, features
+
+def tune_k_nn(data_dict, features_list, n_features, n_neighbors):
+    from sklearn.neighbors import KNeighborsClassifier
+    from feature_format import featureFormat, targetFeatureSplit
+    from sklearn.cross_validation import train_test_split
+    from tester import test_classifier
+    
+    clf = KNeighborsClassifier(n_neighbors=n_neighbors, algorithm='auto')
+    data_dict = rescale_data_dict(data_dict, features_list)
+    
+    data = featureFormat(data_dict, features_list[:n_features+1], sort_keys = True)
+    labels, features = targetFeatureSplit(data)
+    
+    train_features, test_features, train_labels, test_labels = train_test_split(features, labels, test_size=None, random_state = 42)
+    
+    clf = clf.fit(train_features, train_labels)
+    
+    test_classifier(clf, data_dict, features_list[:n_features+1])
